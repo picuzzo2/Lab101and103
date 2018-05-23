@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="COCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-26 04:50:49 PM"/>
+        <attribute name="created" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwNDo0MjoxMCBQTTsgMjc2OA=="/>
+        <attribute name="edited" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwNDo1MDo0OSBQTTsgMjc3OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <call expression="isprime(n)"/>
+        </body>
+    </function>
+    <function name="helpisprime" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="n%i=0">
+                <then>
+                    <output expression="False"/>
+                </then>
+                <else>
+                    <if expression="n^(1/2)&lt;i">
+                        <then>
+                            <output expression="True"/>
+                        </then>
+                        <else>
+                            <call expression="helpisprime(n,i+1)"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="isprime" type="None" variable="x">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="2"/>
+            <call expression="helpisprime(n,i)"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="COCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-26 01:19:00 PM"/>
+        <attribute name="created" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwMToxNjowNyBQTTsgMjc3Mg=="/>
+        <attribute name="edited" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwMToxOTowMCBQTTsgMjc2OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <input variable="x"/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <input variable="y"/>
+            <call expression="gcd(x,y)&#13;&#10;"/>
+            <assign variable="result" expression="gcd(x,y)"/>
+            <output expression="result"/>
+        </body>
+    </function>
+    <function name="gcd" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+            <parameter name="y" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="y=0">
+                <then>
+                    <output expression="x"/>
+                </then>
+                <else>
+                    <declare name="gcd" type="Integer" array="False" size=""/>
+                    <assign variable="gcd" expression="gcd(y,x%y)"/>
+                    <output expression="gcd"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

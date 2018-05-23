@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="COCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-26 05:16:16 PM"/>
+        <attribute name="created" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwMzozMDoxNCBQTTsgMjc2OA=="/>
+        <attribute name="edited" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwNToxNjoxNiBQTTsgMjc3Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="eiei" type="Integer" array="False" size=""/>
+            <declare name="n, num" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <input variable="num"/>
+            <call expression="helper(n,num)"/>
+            <output expression="helper(n,num)"/>
+        </body>
+    </function>
+    <function name="helper" type="Integer" variable="eiei">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, eiei" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <call expression="nbaseto10(n,num,i)"/>
+            <assign variable="eiei" expression="nbaseto10(n,num,i)"/>
+        </body>
+    </function>
+    <function name="nbaseto10" type="Integer" variable="x">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="num" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <if expression="num=0">
+                <then>
+                    <assign variable="x" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="x" expression="nbaseto10(n,num/10,i+1)+((num%10)*(n^i))"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

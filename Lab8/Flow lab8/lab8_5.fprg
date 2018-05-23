@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="COCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-26 05:05:15 PM"/>
+        <attribute name="created" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwNDo1NTo1OCBQTTsgMjc4NA=="/>
+        <attribute name="edited" value="Q09DTzsgREVTS1RPUC1OTFJCTkhHOyAyMDE3LTEwLTI2OyAwNTowNToxNSBQTTsgMjc3Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <input variable="num"/>
+            <output expression="reversenum(num)"/>
+        </body>
+    </function>
+    <function name="eiei" type="Integer" variable="x">
+        <parameters>
+            <parameter name="num" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <if expression="num=0">
+                <then>
+                    <assign variable="x" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="x" expression="eiei(int(num/10),i-1)+((num%10)*(10^i))"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="reversenum" type="Integer" variable="y">
+        <parameters>
+            <parameter name="num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="y, i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="int(log10(num))"/>
+            <call expression="eiei(num,i)"/>
+            <assign variable="y" expression="eiei(num,i)"/>
+        </body>
+    </function>
+</flowgorithm>
